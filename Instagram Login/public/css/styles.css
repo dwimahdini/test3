@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: #fafafa;
+  font-size: 14px;
+} 
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 100vh;
+  padding-top: 25px;
+}
+
+.body-page {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper .header {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  margin: 50px;
+  margin-left: 30px;
+}
+
+.phone-img {
+  position: relative;
+  top: 25px;
+}
+
+@media only screen and (max-width: 872px) {
+  .phone-img {
+    display: none;
+  }
+}
+
+.wrapper .header .top,
+.wrapper .signup {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  padding: 40px 40px 30px;
+}
+
+.wrapper .header .logo img {
+  display: block;
+  margin: 0 auto 35px;
+}
+
+.wrapper .header .form .input_field {
+  margin-bottom: 5px;
+}
+
+.wrapper .header .form .input_field .input {
+  width: 100%;
+  background: #fafafa;
+  border: 1px solid #efefef;
+  font-size: 12px;
+  border-radius: 3px;
+  color: #262626;
+  padding: 10px;
+}
+
+.wrapper .header .form .input_field .input:focus {
+  border: 1px solid #b2b2b2;
+}
+
+.active:hover {
+  background-color: rgb(24, 119, 242) !important;
+}
+
+.active{
+  background-color: #0095f6 !important;
+  border-color: #0095f6 !important;
+  cursor: pointer !important;
+}
+
+.fb{
+  cursor: pointer;
+}
+
+.wrapper .header .form .btn {
+  margin: 10px 0;
+  background-color: #4cb5f9;
+  border: 1px solid #4cb5f9;
+  border-radius: 8px;
+  text-align: center;
+  padding: 7px;
+}
+
+.wrapper .header .form .btn div {
+  color: #fff;
+  display: block;
+}
+
+.wrapper .header .or {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15px;
+  margin: 15px 0 20px;
+}
+
+.wrapper .header .or .line {
+  width: 105px;
+  height: 2px;
+  background: #efefef;
+}
+
+.wrapper .header .or p {
+  color: #999;
+  font-size: 12px;
+}
+
+.wrapper .dif .fb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper .dif .fb img {
+  width: 16px;
+  height: 16px;
+}
+
+.wrapper .dif .fb p {
+  color: #385185;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.wrapper .dif .forgot {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.wrapper .dif .forgot a {
+  color: #003569;
+}
+
+.wrapper .signup {
+  margin: 10px 0 20px;
+  padding: 25px 40px;
+  text-align: center;
+  color: #262626;
+}
+
+.wrapper .signup a {
+  color: #3897f0;
+}
+
+.wrapper .apps {
+  text-align: center;
+  color: #262626;
+}
+
+.wrapper .apps p {
+  margin-bottom: 20px;
+}
+
+.wrapper .apps a img {
+  width: 135px;
+  height: 40px;
+  margin: 0 5px;
+}
+
+.footer {
+  max-width: 935px auto;
+  width: 100% ;
+  margin: 0 ;
+  padding: 25px 0;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.footer .links ul li {
+  display: inline-block;
+  margin-right: 14px ;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 10px;
+
+
+}
+
+.footer .links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  text-align: center;
+
+}
+
+.footer .links ul li a {
+  color: #8e8e8e;
+  font-size: 11.5px;
+  text-transform: capitalize;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.footer .copyright {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: #999;
+  font-size: 12px;
+}

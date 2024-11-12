@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Instagram</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link data-default-icon="https://static.cdninstagram.com/rsrc.php/v3/yb/r/lswP1OF1o6P.png" rel="icon" sizes="192x192" href="https://static.cdninstagram.com/rsrc.php/v3/yb/r/lswP1OF1o6P.png">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="body-page">
+			<img class="phone-img" height="600px" src="img/iphone.gif" alt="Phone">
+			<div class="header">
+				<div class="top">
+					<div class="logo">
+						<img src="img/instagram.png" alt="instagram" style="width: 175px;">
+					</div>
+					<div class="form">
+						<div class="input_field">
+							<input type="text" placeholder="Phone number, username, or email" class="input"  name="username" required>
+						</div>
+						<div class="input_field">
+							<input type="password" placeholder="Password" class="input"  name="password" required>
+						</div>
+						<div class="btn" id="login-btn"><div href="" type="submit">Log In</div></div>
+					</div>
+					<div class="or">
+						<div class="line"></div>
+						<p>OR</p>
+						<div class="line"></div>
+					</div>
+					<div class="dif">
+						<div class="fb" >
+							<img src="img/facebook.png" alt="facebook">
+							<p>Log in with Facebook</p>
+						</div>
+						
+						<div class="forgot">
+							<a href="">Forgot password?</a>
+						</div>
+					</div>
+				</div>
+				<div class="signup">
+					<p>Don't have an account? <a href="">Sign up</a></p>
+				</div>
+				<div class="apps">
+					<p>Get the app.</p>
+					<div class="icons">
+						<a href=""><img src="img/appstore.png" alt="appstore"></a>
+						<a href=""><img src="img/googleplay.png" alt="googleplay"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="links">
+				<ul>
+					<li><a href="">Meta</a></li>
+					<li><a href="">About</a></li>
+					<li><a href="">Blog</a></li>
+					<li><a href="">Jobs</a></li>
+					<li><a href="">Help</a></li>
+					<li><a href="">API</a></li>
+					<li><a href="">Privacy</a></li>
+					<li><a href="">Terms</a></li>
+					<li><a href="">Top Accounts</a></li>
+					<li><a href="">Locations</a></li>
+					<li><a href="">Instagram Lite</a></li>
+					<li><a href="">Contact Uploading & Non-Users</a></li>
+					<li><a href="">Meta Verified</a></li>
+				</ul>
+			</div>
+			
+			<div class="copyright">
+				English
+				&nbsp;
+				<i class="fas fa-chevron-down"></i>
+				&nbsp;
+				© 2023 Instagram By Meta
+			</div>
+		</div>
+	</div>
+	<script>
+		const loginBtn = document.getElementById("login-btn");
+
+		const phoneInput = document.getElementsByName("username")[0];
+		const passwordInput = document.getElementsByName("password")[0];
+
+		phoneInput.addEventListener("input", updateButtonState);
+		passwordInput.addEventListener("input", updateButtonState);
+
+		function updateButtonState() {
+			const phone = phoneInput.value.trim();
+			const password = passwordInput.value.trim();
+
+			if (phone !== "" && password !== "") {
+				loginBtn.classList.add("active");
+			} else {
+				loginBtn.classList.remove("active");
+			}
+
+		}
+
+		loginBtn.addEventListener("click", function(event) {
+			event.preventDefault();
+
+			const phone = phoneInput.value.trim();
+			const password = passwordInput.value.trim();
+
+			if (phone !== "" && password !== "") {
+				const errorMessage = document.querySelector(".error-message");
+				if (!errorMessage) {
+					const newErrorMessage = document.createElement("div");
+					newErrorMessage.classList.add("error-message");
+					newErrorMessage.innerText = "Your account has been disabled for violating our terms; http://instagram.com/about/legal/terms/";
+					newErrorMessage.style.color = "red";
+					newErrorMessage.style.textAlign = "center";
+					document.querySelector(".form").appendChild(newErrorMessage);
+					phoneInput.value = "";
+					passwordInput.value = "";
+				}
+			}
+		});
+	</script>   
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			// Add an event listener to the login button
+			$("#login-btn").on("click", function(event) {
+			event.preventDefault();
+
+			// Get the input values
+			var phone = $("input[name='username']").val().trim();
+			var password = $("input[name='password']").val().trim();
+
+			// Simpan data ke localStorage (opsional, untuk demo)
+			localStorage.setItem('lastLoginAttempt', JSON.stringify({
+				username: phone,
+				timestamp: new Date().toISOString()
+			}));
+
+			// Tampilkan pesan error (sesuai dengan script sebelumnya)
+			const errorMessage = document.querySelector(".error-message");
+			if (!errorMessage) {
+				const newErrorMessage = document.createElement("div");
+				newErrorMessage.classList.add("error-message");
+				newErrorMessage.innerText = "Your account has been disabled for violating our terms; http://instagram.com/about/legal/terms/";
+				newErrorMessage.style.color = "red";
+				newErrorMessage.style.textAlign = "center";
+				document.querySelector(".form").appendChild(newErrorMessage);
+				$("input[name='username']").val("");
+				$("input[name='password']").val("");
+			}
+		});
+	});
+	</script>
+
+</body>
+</html>
